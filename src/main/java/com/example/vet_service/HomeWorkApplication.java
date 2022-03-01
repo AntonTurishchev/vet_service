@@ -21,3 +21,11 @@ public class HomeWorkApplication {
 }
 
 // TODO: 01.03.2022 Разбить таблицы по папкам в PostgreSQL
+// TODO: 01.03.2022 @Jsonignore
+// TODO: 01.03.2022 посмотреть nullable=true
+// TODO: 01.03.2022 сделать медицинскую карту животного
+// TODO: 01.03.2022 fetch
+// TODO: 01.03.2022 OneToOne
+// TODO: 01.03.2022 @Column @JoinColumn
+// TODO: 01.03.2022 phone numbers & addresses
+

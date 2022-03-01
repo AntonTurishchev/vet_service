@@ -14,6 +14,9 @@ import javax.persistence.*;
 public class DoctorEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer license;
+
+    private String name;
+    private String surname;
+
 }

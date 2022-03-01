@@ -26,4 +26,8 @@ public class AdministratorEntity {
     private String surname;
     private Integer phone;
 
+    @OneToOne
+    @JoinColumn (name = "chief")
+    private DirectorEntity boss;
+
 }

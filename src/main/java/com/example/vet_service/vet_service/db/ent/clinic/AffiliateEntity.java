@@ -1,36 +1,44 @@
 package com.example.vet_service.vet_service.db.ent.clinic;
 
+import com.example.vet_service.vet_service.db.ent.person.AdministratorEntity;
 import com.example.vet_service.vet_service.db.ent.person.DirectorEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(schema = "public", name = "affiliates")
-public class AffiliateEntity extends ClinicEntity{
-
-    @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "clinic")
-    private ClinicEntity clinic;
+@Table(schema = "public", name = "affiliate")
+public class AffiliateEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "filial_of")
+    private ClinicEntity clinic;
 
     private String city;
     private String localName;
+    private String address;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "director")
     private DirectorEntity director;
 
-    // TODO: 01.03.2022 fetch 
-    // TODO: 01.03.2022 OneToOne
-    // TODO: 01.03.2022 @Column @JoinColumn
+    @OneToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "administrator")
+    private AdministratorEntity administrator;
+
+
+
+
 
 }

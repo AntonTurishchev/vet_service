@@ -26,10 +26,7 @@ public class AnimalsEntity {
     private String name;
     private Integer age;
 
-    @ManyToOne (cascade = {CascadeType.ALL})
-    @JoinColumn(name = "Owner", nullable = true)
-    // TODO: 01.03.2022 посмотреть nullable=true
+    @ManyToOne (cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner", nullable = true)
     private OwnerEntity owner;
 }
-
-// TODO: 01.03.2022 сделать медицинскую карту животного
