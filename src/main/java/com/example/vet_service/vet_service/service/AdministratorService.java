@@ -1,11 +1,9 @@
 package com.example.vet_service.vet_service.service;
 
 import com.example.vet_service.vet_service.service.interfaces.BaseCrudOperations;
-import org.springframework.stereotype.Service;
+import com.example.vet_service.vet_service.service.interfaces.AssignmentModification;
 
-@Service
-public class AnimalsService implements BaseCrudOperations {
-
+public class AdministratorService implements BaseCrudOperations, AssignmentModification {
     @Override
     public String createOneInstance() {
         return "ok";
@@ -23,6 +21,16 @@ public class AnimalsService implements BaseCrudOperations {
 
     @Override
     public void deleteByIdOfInstance() {
+
+    }
+
+    @Override
+    public void takeNewAssignment() {
+
+    }
+
+    @Override
+    public void correctNewAssignment() {
 
     }
 }
